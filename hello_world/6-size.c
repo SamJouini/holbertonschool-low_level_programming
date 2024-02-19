@@ -1,15 +1,17 @@
 #include <stdio.h>
+
 /**
  ** main - printfs
  ** Return: 0
  **/
+
 int main(void)
 {
 char charType;
 int intType;
 long int longintType;
 long long int longlongintType;
-float floaType;
+float floatType;
 
 printf("Size of char: %zu byte\n", sizeof(charType));
 printf("Size of int: %zu bytes\n", sizeof(intType));
