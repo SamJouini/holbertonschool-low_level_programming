@@ -2,23 +2,21 @@
 
 /**
  * main - alphabet ALPHABET
- * return: 0
+ * Return: 0
  */
 
 int main(void)
 {
-	char lowercase;
-	char uppercase;
+	char ch;
 
-	for (lowercase = 'a'; lowercase <= 'z';)
+	for (ch = 'a'; ch <= 'z'; ch++)
 	{
-		putchar(lowercase);
+		putchar(ch);
 	}
-
-	for (uppercase = 'A' ; uppercase <= 'Z';)
+	for (ch = 'A'; ch <= 'Z'; ch++)
 	{
-		putchar(uppercase);
+		putchar(ch);
 	}
-	putchar('\n');
+		putchar('\n');
 	return (0);
 }
