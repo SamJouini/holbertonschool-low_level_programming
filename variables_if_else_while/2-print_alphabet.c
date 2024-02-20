@@ -2,7 +2,7 @@
 
 /**
  * main- alphabet
- * return: 0
+ * Reurn: 0
  */
 
 
