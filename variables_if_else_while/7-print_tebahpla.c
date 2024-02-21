@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - alphabet
+ * main - alphabet in reverse
  * Return: 0
  */
 
@@ -9,6 +9,7 @@
 int main(void)
 {
 	char ch;
+
 	for (ch = 'z'; ch >= 'a' ; ch--)
 	{
 		putchar(ch);
