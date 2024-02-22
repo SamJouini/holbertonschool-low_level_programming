@@ -2,6 +2,7 @@
 
 /**
  * _islower - is lower than
+ * @c : letter
  * Return: 0
  */
 
