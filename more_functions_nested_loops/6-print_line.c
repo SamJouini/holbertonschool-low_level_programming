@@ -8,7 +8,9 @@
 
 void print_line(int n)
 {
-	/* l =lige */
+	/* 
+	 * l =lige 
+	 */
 	int l;
 
 	if (n <= 0)
