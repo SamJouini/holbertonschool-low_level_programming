@@ -8,8 +8,10 @@
 
 void print_square(int size)
 {
-	/* w = width 
-	 * h = height */
+	/* 
+	 * w = width 
+	 * h = height 
+	 */
 	int w, h;
 
 	if (size < 1)
