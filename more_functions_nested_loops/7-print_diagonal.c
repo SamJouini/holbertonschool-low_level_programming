@@ -8,6 +8,9 @@
 
 void print_diagonal(int n)
 {
+	/* h = horizontale
+	 * v = vertciale */
+
 	int h, v;
 
 	if (n < 1)
@@ -16,9 +19,9 @@ void print_diagonal(int n)
 		return;
 	}
 
-	for (h = 0 ; h < n ; h++)
+	for (v = 0 ; v < n ; v++)
 	{
-		for (v = 0; v < h; v++)
+		for (h = 0; h < v; h++)
 		{
 			_putchar(' ');
 		}
