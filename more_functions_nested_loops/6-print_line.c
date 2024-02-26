@@ -8,7 +8,8 @@
 
 void print_line(int n)
 {
-	int a;
+	/* l =ligne */
+	int l;
 
 	if (n <= 0)
 	{
@@ -16,7 +17,7 @@ void print_line(int n)
 		return;
 	}
 
-	for (a = 1 ; a <= n ; a++)
+	for (l = 1 ; l <= n ; l++)
 	{
 		_putchar(95);
 	}
