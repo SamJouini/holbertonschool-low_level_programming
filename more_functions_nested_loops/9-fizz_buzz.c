@@ -29,6 +29,7 @@ int main(void)
 		{
 			printf("%d", n);
 		}
+		putchar(' ');
 	}
 	putchar('\n');
 	return (0);
