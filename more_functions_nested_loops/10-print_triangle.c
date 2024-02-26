@@ -8,9 +8,11 @@
 
 void print_triangle(int size)
 {
-	/* r = row
+	/*
+	 * r = row
 	 * w = whitespace
-	 * c = character*/
+	 * c = character
+	 */
 	int r, w, c;
 
 	if (size < 1)
