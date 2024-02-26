@@ -8,8 +8,10 @@
 
 void print_diagonal(int n)
 {
-	/* h = horizontal
-	 * v = vertcial */
+	/* 
+	 * h = horizontal
+	 * v = vertcial 
+	 */
 
 	int h, v;
 
