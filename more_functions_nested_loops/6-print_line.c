@@ -9,7 +9,7 @@
 void print_line(int n)
 {
 	/* 
-	 * l =lige 
+	 * l = line 
 	 */
 	int l;
 
