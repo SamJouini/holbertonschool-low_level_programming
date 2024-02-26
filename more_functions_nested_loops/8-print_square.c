@@ -8,9 +8,9 @@
 
 void print_square(int size)
 {
-	/* l = largeur 
-	 * h = hauteur */
-	int l, h;
+	/* w = width 
+	 * h = height */
+	int w, h;
 
 	if (size < 1)
 	{
@@ -18,7 +18,7 @@ void print_square(int size)
 		return;
 	}
 
-	for (l = 0; l < size; l++)
+	for (w = 0; w < size; w++)
 	{
 		for (h = 0; h < size; h++)
 		{
