@@ -8,7 +8,7 @@
 
 void print_line(int n)
 {
-	/* l =ligne */
+	/* l =lige */
 	int l;
 
 	if (n <= 0)
