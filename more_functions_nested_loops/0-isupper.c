@@ -3,7 +3,7 @@
 /**
  * _isupper - is upper than
  * @c : letter
- * Return: always 0
+ * Return: 0
  */
 
 int _isupper(int c)
