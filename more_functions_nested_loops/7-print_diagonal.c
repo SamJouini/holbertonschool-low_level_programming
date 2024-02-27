@@ -10,7 +10,7 @@ void print_diagonal(int n)
 {
 	/* 
 	 * h = horizontal
-	 * v = vertcial 
+	 * v = vertical 
 	 */
 
 	int h, v;
