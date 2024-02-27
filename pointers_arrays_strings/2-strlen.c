@@ -2,8 +2,8 @@
 
 /**
  * _strlen - return the lenght of a sting
- *
- * Return: 
+ * @s : string
+ * Return: i
  */
 
 int _strlen(char *s)
