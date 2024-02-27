@@ -23,13 +23,13 @@ int main(void)
 		}
 		else if (n % 5 == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
 		}
 		else
 		{
 			printf("%d", n);
 		}
-		if (n!= 100)
+		if (n != 100)
 		{
 			putchar(' ');
 		}
