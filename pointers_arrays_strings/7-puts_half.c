@@ -5,7 +5,6 @@
  * puts_half - print half of a string
  * @str: string of characters
  * Return: second half of string
- *
  */
 
 /* first step to return the lenght of a string */
