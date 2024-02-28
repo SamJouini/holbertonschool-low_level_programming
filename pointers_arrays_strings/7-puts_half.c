@@ -2,9 +2,8 @@
 
 /**
  * _strlen - return the lenght of a string
- * puts_half - print half of a string
  * @str: string of characters
- * Return: second half of string
+ * Return: i
  */
 
 /* first step to return the lenght of a string */
@@ -22,6 +21,12 @@ int _strlen(char *str)
 
 	return (i);
 }
+
+/**
+ * puts_half - print half of a string
+ * @str : a string of characters
+ * Return: the second half of the string
+ */
 
 /* second step cut the string in half and print the first half */
 
