@@ -30,15 +30,15 @@ void puts_half(char *str)
 {
 	int h = _strlen(str) / 2;
 
+	if (_strlen(str) % 2 == 1)
+	{
+		h = (_strlen(str) + 1) / 2;
+	}
+
 	while (str[h] != '\0')
 	{
 		_putchar(str[h]);
 		h++;
-	}
-
-	if (_strlen(str) % 2 == 1)
-	{
-		h = (_strlen(str) + 1) / 2;
 	}
 	_putchar('\n');
 }
