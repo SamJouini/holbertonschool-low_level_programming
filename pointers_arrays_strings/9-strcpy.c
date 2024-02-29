@@ -5,11 +5,11 @@
  * _strcpy - print a pointed string
  * @dest: buffer pointer
  * @src : source
- * Return: dest 
+ * Return: dest
  */
 
 char *_strcpy(char *dest, char *src)
-{                                                                                                                                                            
+{
 	int i, length;
 
 	length = 0;
@@ -23,7 +23,7 @@ char *_strcpy(char *dest, char *src)
 	{
 		dest[i] = src[i];
 	}
-
-	return (dest);
+	dest[i] = '\0';
+		return (dest);
 
 }
