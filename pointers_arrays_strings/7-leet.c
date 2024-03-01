@@ -18,10 +18,10 @@ char *leet(char *s)
 	{
 		for (i = 0; i < 5; i++)
 		{
-			if (*s == l[i] || *s == l[i] - 32)
-				*s = n[i] + '0';
+			if (s[c] == l[i] || s[c] == l[i] - 32)
+				s[c] = n[i] + '0';
 		}
 		c++;
 	}
-		return (s);
+	return (s);
 }
