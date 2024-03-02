@@ -2,8 +2,8 @@
 
 /**
  * _atoi - convert a string into integer
- *
- * Return :
+ * @str: a string
+ * Return: the integer value parsed from the string
  */
 
 int _atoi(char *str)
@@ -13,12 +13,13 @@ int _atoi(char *str)
 	int positif = 1;
 	int start = 0;
 
-	for (i = 0; str[i] !='\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] >= '0' && str[i] <= '9')
 		{
 			char c = str[i];
 			int d = c - '0';
+
 			r = r * 10 + d;
 			start = 1;
 		}
@@ -36,4 +37,4 @@ int _atoi(char *str)
 		}
 	}
 	return (r * positif);
-} 
+}
