@@ -5,7 +5,7 @@
  * _strstr - localisation of  a substring
  * @haystack: string to search through
  * @needle: string to look for
- * Return: 
+ * Return: pointer to the beginning of the haystack string
  */
 
 char *_strstr(char *haystack, char *needle)
@@ -13,8 +13,8 @@ char *_strstr(char *haystack, char *needle)
 	int i = 0;
 	int j;
 
-        while (haystack[i] != '\0')
-        {
+	while (haystack[i] != '\0')
+	{
 		j = 0;
 		while (haystack[i + j] == needle[j])
 		{
@@ -26,7 +26,7 @@ char *_strstr(char *haystack, char *needle)
 			return (&haystack[i]);
 		}
 
-                i++;
-        }
+		i++;
+	}
 	return (NULL);
 }
