@@ -2,8 +2,9 @@
 
 /**
  * _pow_recursion - multiply a value x by the power y
- *
- * Return:
+ * @x: number
+ * @y: power
+ * Return: 0
  */
 
 int _pow_recursion(int x, int y)
@@ -18,7 +19,7 @@ int _pow_recursion(int x, int y)
 		return (1);
 	}
 
-return (x * _pow_recursion (x, y - 1));
+return (x * _pow_recursion(x, y - 1));
 
 }
 
