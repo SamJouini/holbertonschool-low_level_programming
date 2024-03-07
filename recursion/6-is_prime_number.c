@@ -14,14 +14,17 @@ int is_prime_number_test(int n, int base)
 	{
 		return (0);
 	}
+	
 	if (n * n > base)
 	{
 		return (1);
 	}
+	
 	if (base % n == 0)
 	{
 		return (0);
 	}
+	
 	return (is_prime_number_test(n + 1, base));
 }
 
