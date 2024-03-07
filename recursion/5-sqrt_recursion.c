@@ -10,9 +10,15 @@
 int _sqrt_recursion_test(int n, int base)
 {
 	if (base > n)
+	{
 		return (-1);
+	}
+	
 	if (base * base == n)
+	{
 		return (base);
+	}
+	
 	else
 		return (_sqrt_recursion_test(n, base + 1));
 }
