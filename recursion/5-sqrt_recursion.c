@@ -14,7 +14,7 @@ int _sqrt_recursion_test(int n, int base)
 	if (base * base == n)
 		return (base);
 	else
-		return ( _sqrt_recursion_test(n, base + 1));
+		return (_sqrt_recursion_test(n, base + 1));
 }
 
 /**
