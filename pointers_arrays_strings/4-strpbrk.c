@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 /**
- * _strpbrk - searching a string for any of a set of bytes
+ * _strpbrk - searching a string for any of a set of byte
  * @s: the string to look trought
  * @accept: the string to compare with
  * Return: location of the first occurence
