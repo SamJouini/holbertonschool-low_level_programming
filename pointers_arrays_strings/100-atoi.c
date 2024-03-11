@@ -1,4 +1,5 @@
-include "main.h"
+#include "main.h"
+#include <limits.h>
 
 /**
  * _atoi - convert a string into integer
@@ -21,10 +22,6 @@ int _atoi(char *str)
 
 			r = r * 10 + d;
 			start = 1;
-		}
-		if (r == INT_MAX / 10 && str++ > INT_MAX % 10)
-		{ 
-			return (INT_MIN);
 		}
 		else if (*str == '-')
 		{
