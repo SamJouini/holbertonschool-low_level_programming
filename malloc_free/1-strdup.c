@@ -1,6 +1,25 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
+
+/**
+ * _strlen - return the lenght of a sting
+ * @s : string
+ * Return: i
+ */
+
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+
+	return (i);
+}
 
 /**
  * _strdup - return a pointer to an allocated space memory
@@ -10,15 +29,15 @@
 
 char *_strdup(char *str)
 {
-	size_t i;
-	char *dupe = malloc(strlen(str) + 1);
+	int i;
+	char *dupe = malloc(_strlen(str) + 1);
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; i <= strlen(str); i++)
+	for (i = 0; i <= _strlen(str); i++)
 	{
 		dupe[i] = str[i];
 
