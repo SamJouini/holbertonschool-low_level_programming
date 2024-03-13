@@ -30,13 +30,14 @@ int _strlen(char *s)
 char *_strdup(char *str)
 {
 	int i;
-	char *dupe = malloc(_strlen(str) + 1);
+	char *dupe;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
+	dupe = malloc(_strlen(str) + 1);
 
 	if (dupe == NULL)
 	{
