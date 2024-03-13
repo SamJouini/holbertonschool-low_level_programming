@@ -37,6 +37,12 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
+
+	if (dupe == NULL)
+	{
+		return (NULL);
+	}
+
 	for (i = 0; i <= _strlen(str); i++)
 	{
 		dupe[i] = str[i];
