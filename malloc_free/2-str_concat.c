@@ -1,6 +1,25 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
+
+/**
+ * _strlen - return the lenght of a sting
+ * @s : string
+ * Return: i
+ */
+
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+
+	return (i);
+}
 
 /**
  * str_concat - concatenates two strings
@@ -11,13 +30,13 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int i = 0;
-	int j = strlen(s1);
+	int i;
+	int j = _strlen(s1);
 	char *str;
 
-	str = malloc((strlen(s1) + strlen(s2) + 1) * size of(char));
+	str = malloc((_strlen(s1) + _strlen(s2) + 1) * sizeof(char));
 
-	for ( ; s1[i] != '\0'; i++)
+	for (i = 0 ; s1[i] != '\0'; i++)
 	{
 		str[i] = s1[i];
 	}
