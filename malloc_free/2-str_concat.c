@@ -34,7 +34,7 @@ char *str_concat(char *s1, char *s2)
 	int j = _strlen(s1);
 	char *str;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL && s2 == NULL)
 	{
 		return (NULL);
 	}
