@@ -20,14 +20,11 @@ char *create_array(unsigned int size, char c)
 	return (NULL);
 	}
 
-	if (ch == NULL);
-	{
-		return (NULL);
-	}
-
 	for (i = 0; i < size; i++)
 	{
 		ch[i] = c;
 	}
+	ch[size] = '\0';
+
 	return (ch);
 }
