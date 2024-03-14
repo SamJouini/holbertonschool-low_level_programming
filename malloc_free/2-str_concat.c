@@ -17,6 +17,7 @@ int _strlen(char *s)
 	{
 		i++;
 	}
+
 	return (i);
 }
 
@@ -35,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL && s2 == NULL)
 	{
-		return (NULL);
+		return ("");
 	}
 
 	str = malloc((_strlen(s1) + _strlen(s2) + 1) * sizeof(char));
