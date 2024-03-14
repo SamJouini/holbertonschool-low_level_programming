@@ -41,6 +41,32 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
+ * _mallocpy - allocate space and copy in it
+ * @str: string to copy
+ * Return: pointer to copied string
+*/
+
+char *_mallocpy(char *str)
+{
+	char *newstr;
+
+	if (str == NULL)
+	{
+		newstr = NULL;
+	}
+	else
+	{
+		newstr = malloc((_strlen(str) + 1) * sizeof(char));
+		if (newstr == NULL)
+		{
+			return (NULL);
+		}
+		_strcpy(newstr, str);
+	}
+	return (newstr);
+}
+
+/**
  * new_dog - create a new dog
  * @name: dog's name
  * @age: dog's age
@@ -53,31 +79,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *newName, *newOwner;
 	dog_t *newDog;
 
-	if (name == NULL)
-	{
-		newName = NULL;
-	}
-	else
-	{
-		newName = malloc((_strlen(name) + 1) * sizeof(char));
-		_strcpy(newName, name);
-	}
-
-	if (owner == NULL)
-	{
-		newOwner = NULL;
-	}
-	else
-	{
-		newOwner = malloc((_strlen(owner) + 1) * sizeof(char));
-		_strcpy(newOwner, owner);
-	}
+	newName = _mallocpy(name);
+	newOwner = _mallocpy(owner);
 
 	newDog = malloc(sizeof(dog_t));
+
+		if (newDog == NULL)
+		{
+			free(newName);
+			free(newOwner);
+			return (NULL);
+		}
+
 	newDog->age = age;
 	newDog->name = newName;
 	newDog->owner = newOwner;
 
 	return (newDog);
-
 }
