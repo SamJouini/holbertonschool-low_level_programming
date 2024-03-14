@@ -13,6 +13,11 @@ int _strlen(char *s)
 
 	i = 0;
 
+	if (s == NULL)
+	{
+		return (0);
+	}
+
 	while (s[i] != '\0')
 	{
 		i++;
@@ -36,6 +41,7 @@ char *_strcpy(char *dest, char *src)
 	{
 		dest[i] = src[i];
 	}
+	dest[i] = '\0';
 
 	return (dest);
 }
