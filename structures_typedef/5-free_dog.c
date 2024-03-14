@@ -3,7 +3,7 @@
 
 /**
  * free_dog - free memory allocation for dogs
- * @d: dog's ID 
+ * @d: dog's ID
 */
 
 void free_dog(dog_t *d)
