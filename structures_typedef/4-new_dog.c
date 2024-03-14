@@ -55,13 +55,24 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	newDog->age = age;
 
+	if (name == NULL)
+	{
+		return (NULL);
+	}
+
 	newName = malloc((_strlen(name) + 1) * sizeof(char));
 	_strcpy(newName, name);
 	newDog->name = newName;
 
+	if (owner == NULL)
+	{
+		return (NULL);
+	}
+
 	newOwner = malloc((_strlen(owner) + 1) * sizeof(char));
 	_strcpy(newOwner, owner);
 	newDog->owner = newOwner;
+
 
 	return (newDog);
 
