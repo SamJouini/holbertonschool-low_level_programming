@@ -48,22 +48,22 @@ char *_strcpy(char *dest, char *src)
 
 char *_mallocpy(char *str)
 {
-	char *newstr;
 
 	if (str == NULL)
 	{
-		newstr = NULL;
+		return (NULL);
 	}
 	else
 	{
+		char *newstr;
 		newstr = malloc((_strlen(str) + 1) * sizeof(char));
 		if (newstr == NULL)
 		{
 			return (NULL);
 		}
 		_strcpy(newstr, str);
+		return (newstr);
 	}
-	return (newstr);
 }
 
 /**
@@ -84,13 +84,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	newDog = malloc(sizeof(dog_t));
 
-		if (newDog == NULL || newName == NULL || newOwner == NULL)
-		{
-			free(newDog);
-			free(newName);
-			free(newOwner);
-			return (NULL);
-		}
+	if (newDog == NULL || newName == NULL || newOwner == NULL)
+	{
+		free(newDog);
+		free(newName);
+		free(newOwner);
+		return (NULL);
+	}
 
 	newDog->age = age;
 	newDog->name = newName;
