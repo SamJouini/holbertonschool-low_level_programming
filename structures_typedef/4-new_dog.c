@@ -53,10 +53,13 @@ char *_mallocpy(char *str)
 	{
 		return (NULL);
 	}
+
 	else
 	{
 		char *newstr;
+
 		newstr = malloc((_strlen(str) + 1) * sizeof(char));
+
 		if (newstr == NULL)
 		{
 			return (NULL);
