@@ -1,6 +1,30 @@
 #include "main.h"
-#include <string.h>
 #include <stdlib.h>
+
+/**
+ * _strlen - return the lenght of a sting
+ * @s : string
+ * Return: i
+ */
+
+unsigned int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+
+	if (s == NULL)
+	{
+		return (0);
+	}
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+
+	return (i);
+}
 
 /**
  * string_nconcat - concatenate strings
@@ -12,25 +36,25 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	size_t i;
+	unsigned int i;
 	unsigned int j;
 	char *c;
 
-	c = malloc(sizeof(char) * (strlen(s1) + n + 1));
+	if (n > _strlen(s2))
+	{
+		n = _strlen(s2);
+	}
+
+	c = malloc((_strlen(s1) + n + 1) * sizeof(char *));
 
 	if (c == NULL)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; i < strlen(s1); i++)
+	for (i = 0; i < _strlen(s1); i++)
 	{
 		c[i] = s1[i];
-	}
-
-	if (n > strlen(s2))
-	{
-		n = strlen(s2);
 	}
 
 	for (j = 0; j < n; j++)
