@@ -1,0 +1,1 @@
+This readme is about the function pointer exercice of the Holbertons curriculum.
