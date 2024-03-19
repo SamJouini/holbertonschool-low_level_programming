@@ -19,11 +19,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	for (i = 0; i < n; i++)
 	{
-		if (str == NULL)
-		{
-			printf("(nil)%s ", separator);
-		}
-		else
+		if (str != NULL)
 		{
 			printf("%s", str);
 		}
