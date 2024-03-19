@@ -15,6 +15,8 @@ int main(int argc, char *argv[])
 	int n1 = atoi(argv[1]);
 	int n2 = atoi(argv[3]);
 	char *op = argv[2];
+	int (*f)(int, int);
+	int result;
 
 	if (argc != 4)
 	{
@@ -22,13 +24,13 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	/**
-	 if ()
+	f = get_op_func(argv[2]);
+
+	if (f == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	*/
 
 	if ((op[0] == '%' || op[0] == '/') && n2 == 0)
 	{
@@ -36,6 +38,7 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	printf("%d\n", (*get_op_func(op))(n1, n2));
+	result = (*f)(n1, n2);
+	printf("%d\n", result);
 	return (0);
 }
