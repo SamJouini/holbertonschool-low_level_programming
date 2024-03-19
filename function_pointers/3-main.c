@@ -22,13 +22,15 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (get_op_func(argv[2]) == NULL || argv[2][1])
+	/**
+	 if ()
 	{
 		printf("Error\n");
 		exit(99);
 	}
+	*/
 
-	if (n2 == '0' && (op[0] == '%' || op[0] == '/'))
+	if ((op[0] == '%' || op[0] == '/') && n2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
