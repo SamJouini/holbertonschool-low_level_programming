@@ -3,48 +3,89 @@
 #include <stdio.h>
 
 /**
+ * format_char- print a character
+ * @arg: argument list
+ */
+
+void format_char(va_list arg)
+{
+	printf("%c", va_arg(arg, int));
+}
+
+/**
+ * format_int- print an integer
+ * @arg: argument list
+ */
+
+void format_int(va_list arg)
+{
+	printf("%d", va_arg(arg, int));
+}
+
+/**
+ * format_float- print a float
+ * @arg: argument list
+ */
+
+void format_float(va_list arg)
+{
+	printf("%f", va_arg(arg, double));
+}
+
+/**
+ * format_string- print a string
+ * @arg: argument list
+ */
+void format_string(va_list arg)
+{
+	char *str;
+	str = va_arg(arg, char *);
+
+	if (str == NULL)
+	{
+		str = "(nil)";
+	}
+	printf("%s", str);
+}
+
+/**
  * print_all - function that print anything
  * @format:list of types of arguments passed to the function
+ * print_all("ceis", 'B', 3, "stSchool")
 */
 
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	unsigned int i = 0;
-	char *separator = "";
-	char *str;
+	va_list arg_list;
+	int i = 0;
+	int j = 0;
+	void (*f)(va_list);
 
-	va_start(args, format);
+type_t type_list[] = {
+	{'c', format_char},
+	{'i', format_int},
+	{'f', format_float},
+	{'s', format_string},
+};
 
-	while (format != NULL && format[i] != '\0')
+	va_start(arg_list, format);
+
+	while (format[i] != '\0')
 	{
-		if (format[i] == 'c')
+		va_arg(arg_list, int);
+	
+		while (j < 4)
 		{
-			printf("%s%c", separator, va_arg(args, int));
-			separator = ", ";
-		}
-		else if (format[i] == 'i')
-		{
-			printf("%s%d", separator, va_arg(args, int));
-			separator = ", ";
-		}
-		else if (format[i] == 'f')
-		{
-			printf("%s%f", separator, va_arg(args, double));
-			separator = ", ";
-		}
-		else if (format[i] == 's')
-		{
-			str = va_arg(args, char *);
-			if (str == NULL)
+			if (format[i] == type_list[j].type)
 			{
-				str = "(nil)";
+				f = type_list[j].f;
 			}
-			printf("%s%s", separator, str);
-			separator = ", ";
+			j++;
 		}
+		(*f)(arg_list);
 		i++;
 	}
-	va_end(args);
+
+	va_end(arg_list);
 	printf("\n");
 }
