@@ -13,7 +13,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list arg;
 	unsigned int i;
-	char *str = 0;
+	char *str;
 
 	if (separator == NULL)
 	{
@@ -24,9 +24,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	for (i = 0; i < n; i++)
 	{
-		printf("%s", va_arg(arg, char *));
+		str = (va_arg(arg, char *));
 
-		if (str != NULL)
+		if (str == NULL)
+		{
+			printf("(nil)");
+		}
+		else
 		{
 			printf("%s", str);
 		}
