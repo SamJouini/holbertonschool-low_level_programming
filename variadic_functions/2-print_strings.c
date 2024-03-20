@@ -15,6 +15,15 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	char *str = 0;
 
+	if (separator == NULL)
+	{
+		separator = "";
+	}
+
+	if (str == NULL)
+	{
+		printf("(nil)")
+	}
 
 	va_start(arg, n);
 
@@ -30,10 +39,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		if (i < (n - 1) && separator != NULL)
 		{
 			printf("%s", separator);
-		}
-		else if (separator == NULL)
-		{
-			separator = "";
 		}
 	}
 	printf("\n");
