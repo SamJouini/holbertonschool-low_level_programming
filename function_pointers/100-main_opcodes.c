@@ -1,13 +1,16 @@
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include "function_pointers.h"
 
 /**
- * 
+ * main - prints the opcodes of its own main function
+ * @argc: number of arguments
+ * @argv: list of arguments
+ * Return: 0 if sucess 1 or 2 if failed
 */
 
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
 	int num_bytes;
 	unsigned char *main_func;
@@ -30,7 +33,7 @@ int main(int argc, char *argv[])
 
 	for (int i = 0; i < num_bytes; i++)
 	{
-		printf("%d", main_func[i]);
+		printf("%02x ", main_func[i]);
 	}
 	printf("\n");
 
