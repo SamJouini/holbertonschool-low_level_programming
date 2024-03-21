@@ -42,7 +42,7 @@ void format_string(va_list arg)
 
 	if (str == NULL)
 	{
-		printf("(nil)");
+		str = "(nil)";
 	}
 	printf("%s", str);
 }
