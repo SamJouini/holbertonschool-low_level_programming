@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 {
 	int num_bytes;
 	unsigned char *main_func;
+	int i = 0;
 
 	if (argc != 2)
 	{
@@ -21,7 +22,6 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	num_bytes = atoi(argv[1]);
 
 	if (num_bytes < 0)
 	{
@@ -29,11 +29,13 @@ int main(int argc, char *argv[])
 		return (2);
 	}
 
+	num_bytes = atoi(argv[1]);
 	main_func = (unsigned char *)main;
 
-	for (int i = 0; i < num_bytes; i++)
+	while (i < num_bytes)
 	{
 		printf("%02x ", main_func[i]);
+		i++;
 	}
 	printf("\n");
 
