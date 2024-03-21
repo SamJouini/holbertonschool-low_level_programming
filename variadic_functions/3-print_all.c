@@ -60,12 +60,12 @@ void print_all(const char * const format, ...)
 	void (*f)(va_list);
 	char *separator = "";
 
-type_t format_list[] = {
-	{'c', format_char},
-	{'i', format_int},
-	{'f', format_float},
-	{'s', format_string}
-};
+	type_t format_list[] = {
+		{'c', format_char},
+		{'i', format_int},
+		{'f', format_float},
+		{'s', format_string}
+	};
 
 	va_start(arg_list, format);
 
