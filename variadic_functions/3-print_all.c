@@ -43,7 +43,7 @@ void format_string(va_list arg)
 
 	if (str == NULL)
 	{
-		str = "(nil)";
+		printf("(nil)");
 	}
 	printf("%s", str);
 }
@@ -51,7 +51,6 @@ void format_string(va_list arg)
 /**
  * print_all - function that print anything
  * @format:list of types of arguments passed to the function
- * print_all("ceis", 'B', 3, "stSchool")
 */
 
 void print_all(const char * const format, ...)
@@ -60,17 +59,19 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	int j = 0;
 	void (*f)(va_list);
+	char *separator = "";
 
 type_t type_list[] = {
 	{'c', format_char},
 	{'i', format_int},
 	{'f', format_float},
 	{'s', format_string},
+	{'\0', NULL}
 };
 
 	va_start(arg_list, format);
 
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format != NULL )
 	{
 		va_arg(arg_list, int);
 	
@@ -78,7 +79,9 @@ type_t type_list[] = {
 		{
 			if (format[i] == type_list[j].type)
 			{
+				printf("%s", separator);
 				f = type_list[j].f;
+				separator = ", ";
 			}
 			j++;
 		}
