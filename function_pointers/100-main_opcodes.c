@@ -32,12 +32,12 @@ int main(int argc, char *argv[])
 
 	main_func = (unsigned char *)main;
 
-	while (i < num_bytes)
+	while (i < num_bytes && main_func[i] != 0xc3)
 	{
 		printf("%02x ", main_func[i]);
 		i++;
 	}
-	printf("\n");
 
+	printf("\n");
 	return (0);
 }
