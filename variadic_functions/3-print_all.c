@@ -3,50 +3,95 @@
 #include <stdio.h>
 
 /**
- * print_all - function that prints anything.
- * @format: list of types of arguments passed to the function
+ * format_char- print a character
+ * @arg: argument list
  */
+
+void format_char(va_list arg)
+{
+	printf("%c", va_arg(arg, int));
+}
+
+/**
+ * format_int- print an integer
+ * @arg: argument list
+ */
+
+void format_int(va_list arg)
+{
+	printf("%d", va_arg(arg, int));
+}
+
+/**
+ * format_float- print a float
+ * @arg: argument list
+ */
+
+void format_float(va_list arg)
+{
+	printf("%f", va_arg(arg, double));
+}
+
+/**
+ * format_string- print a string
+ * @arg: argument list
+ */
+void format_string(va_list arg)
+{
+	char *str = va_arg(arg, char *);
+
+	if (str == NULL)
+	{
+		str = "(nil)";
+	}
+	printf("%s", str);
+}
+
+/**
+ * print_all - function that print anything
+ * @format:list of types of arguments passed to the function
+*/
 
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	char *str;
-    char *separator = "";
-
 	va_list arg_list;
+	int i = 0;
+	char *separator = "";
 
 	va_start(arg_list, format);
 
-	if (format != '\0')
+	while (format[i] != '\0' && format != NULL)
 	{
-		while (format[i] != NULL)
+		switch (format[i++])
 		{
-			switch (format[i])
+			case 'c':
 			{
-				case 'c':
-					printf("%s%c", separator, va_arg(arg_list, int));
-					break;
-				case 'i':
-					printf("%s%d", separator, va_arg(arg_list, int));
-					break;
-				case 'f':
-					printf("%s%f", separator, va_arg(arg_list, double));
-					break;
-				case 's':
-					str = va_arg(arg_list, char *);
-					if (!str)
-						str = "(nil)";
-					printf("%s%s", separator, str);
-					break;
-				default:
-					i++;
-					continue;
+				printf("%s", separator);
+				format_char(arg_list);
+				break;
 			}
-			separator = ", ";
-			i++;
+			case 'i':
+			{
+				printf("%s", separator);
+				format_int(arg_list);
+				break;
+			}
+			case 'f':
+			{
+				printf("%s", separator);
+				format_float(arg_list);
+				break;
+			}
+			case 's':
+			{
+				printf("%s", separator);
+				format_string(arg_list);
+				break;
+			}
 		}
+		separator = ", ";
 	}
 
-	printf("\n");
 	va_end(arg_list);
+	printf("\n");
 }
