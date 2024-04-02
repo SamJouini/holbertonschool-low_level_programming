@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _strlen - return the lenght of a sting
- * @s : string
- * Return: i
+ * _strlen - return the length of a string
+ * @s : string to mesure
+ * Return: I, the index
  */
 
 int _strlen(char *s)
