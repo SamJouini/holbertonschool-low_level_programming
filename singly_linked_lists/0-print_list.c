@@ -3,8 +3,8 @@
 #include <stddef.h>
 
 /**
- * print_list - function that prints the elements of a list
- * @h: the head of the list
+ * print_list - function that prints the elements of a linked list
+ * @h: head of the  linked list
  * Return: the number of nodes
 */
 
