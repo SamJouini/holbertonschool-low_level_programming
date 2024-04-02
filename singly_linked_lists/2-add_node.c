@@ -3,6 +3,26 @@
 #include <string.h>
 
 /**
+ * _strlen - return the lenght of a string
+ * @s : string to mesure
+ * Return: i
+ */
+
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+
+	return (i);
+}
+
+/**
  * add_node - addition of a new node at the beginning of a linked list
  * @head: head of the linked list
  * @str: string to duplicate
@@ -26,7 +46,7 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		free(new);
 	}
-	new->len = strlen(str);
+	new->len = _strlen(str);
 	new->next = *head;
 	*head = new;
 	return (new);
