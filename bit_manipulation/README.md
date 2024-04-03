@@ -1,0 +1,1 @@
+This README is about Holberton's bit manipulation exercices.
