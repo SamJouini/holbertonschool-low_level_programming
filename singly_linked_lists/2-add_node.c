@@ -32,6 +32,7 @@ int _strlen(char *s)
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new;
+	char *dupe;
 
 	new = malloc(sizeof(list_t));
 
@@ -40,13 +41,16 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	new->str = strdup(str);
+	dupe = strdup(str);
 
-	if (new->str == NULL || head == NULL)
+	if (dupe == NULL || head == NULL)
 	{
 		free(new);
+		return (NULL);
 	}
-	new->len = _strlen(str);
+
+	new->str = dupe;
+	new->len = _strlen(dupe);
 	new->next = *head;
 	*head = new;
 	return (new);
