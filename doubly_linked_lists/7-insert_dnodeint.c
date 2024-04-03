@@ -2,6 +2,31 @@
 #include <stdlib.h>
 
 /**
+ * *get_dnodeint_at_index - the nth node of a double linked list
+ * @head: head of the linked list
+ * @index: index of the node
+ * Return: the node or NULL if not existing
+*/
+
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+{
+	unsigned int i = 0;
+
+	while (head != NULL && i < index)
+	{
+		head = head->next;
+		i++;
+	}
+
+	if (i == index)
+	{
+		return (head);
+	}
+	else
+	return (NULL);
+}
+
+/**
  * *insert_dnodeint_at_index - insert a new node at a given position
  * @h: pointer to the head of the list
  * @idx: index where the new node should be added.
@@ -11,53 +36,33 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new; dlistint_t *current;
-	unsigned int i;
+	dlistint_t *newNode;
+	dlistint_t *nextNode;
+	dlistint_t *prevNode;
 
 	if (h == NULL)
 		return (NULL);
 
-	new = malloc(sizeof(dlistint_t));
-	if (new == NULL)
+	newNode = malloc(sizeof(dlistint_t));
+	if (newNode == NULL)
 		return (NULL);
 
-	new->n = n;
-	new->prev = NULL;
-	new->next = NULL;
+	newNode->n = n;
+	newNode->prev = NULL;
+	newNode->next = NULL;
 
-	if (*h == NULL)
+	nextNode = get_dnodeint_at_index(*h, idx);
+
+	if (nextNode == NULL)
 	{
-		*h = new;
-		return (new);
+		return (NULL);
 	}
+	prevNode = nextNode->prev;
 
-	if (idx == 0)
-	{
-		new->next = *h;
-		(*h)->prev = new;
-		*h = new;
-		return (new);
-	}
+	newNode->next = nextNode;
+	nextNode->prev = newNode;
 
-	current = *h;
-	for (i = 0; i < idx - 1 && current->next != NULL; i++)
-	{
-		current = current->next;
-	}
-
-	if (i == idx - 1)
-	{
-		new->prev = current;
-		new->next = current->next;
-
-		if (current->next != NULL)
-		{
-			current->next->prev = new;
-			current->next = new;
-			return (new);
-		}
-	}
-
-	free(new);
-	return (NULL);
+	newNode->prev = prevNode;
+	prevNode->next = newNode;
+	return (newNode);
 }
