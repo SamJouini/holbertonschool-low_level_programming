@@ -1,0 +1,1 @@
+This readme is about holberton's file I/O project.
