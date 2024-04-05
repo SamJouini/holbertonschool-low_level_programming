@@ -45,17 +45,17 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-			close(file);
-			return (-1);
+		close(file);
+		return (-1);
 	}
 
 	bytes_written = write(file, text_content, _strlen(text_content));
-	
+
 	if (bytes_written == -1 || bytes_written != _strlen(text_content))
-		{
-			close(file);
-			return (-1);
-		}
+	{
+		close(file);
+		return (-1);
+	}
 
 	close(file);
 	return (1);
