@@ -11,7 +11,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *fileContent;
 	int file = 0;
-	ssize_t bytes_read, bytes_written;
+	ssize_t bytes_read = 0;
+	ssize_t bytes_written = 0;
 
 	if (filename == NULL)
 		return (0);
@@ -27,18 +28,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	ssize_t bytes_read = read(file, fileContent, letters);
-
+	bytes_read = read(file, fileContent, letters);
 	if (bytes_read == -1)
 	{
 		free(fileContent);
 		close(file);
 		return (0);
 	}
-	fileContent[bytes_read] = '\0';
 
-	ssize_t bytes_written = write(STDOUT_FILENO, fileContent, bytes_read);
-
+	bytes_written = write(STDOUT_FILENO, fileContent, bytes_read);
 	if (bytes_written != bytes_read)
 	{
 		free(fileContent);
@@ -46,7 +44,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	free(fileContent);
 	close(file);
-	return (bytes_read);
+	free(fileContent);
+
+	return (bytes_written);
 }
